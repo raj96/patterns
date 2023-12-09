@@ -16,8 +16,9 @@ function _(z) {
 
 function setup() {
 
-    let canvasWidth = Math.ceil(smallerDim / 1.2);
-    let canvasHeight = canvasWidth;
+    AppState.canvasDim = Math.ceil(smallerDim/1.05);
+    let canvasWidth = AppState.canvasDim;
+    let canvasHeight = AppState.canvasDim;
     const canvas = createCanvas(canvasWidth, canvasHeight);
     canvas.parent("canvas-container");
 
@@ -32,13 +33,14 @@ function getCartesianPoint(n, theta) {
     let x = r * Math.sin(theta);
     let y = r * Math.cos(theta);
 
-    x = map(x, 1, -1, 0, width);
-    y = map(y, 1, -1, 0, height);
+    x = map(x, 1, -1, 0, AppState.canvasDim);
+    y = map(y, 1, -1, 0, AppState.canvasDim);
 
     return { x, y };
 }
 
 function draw() {
+
     if (AppState.n == 0 || AppState.d == 0) return;
 
     background(0);
