@@ -1,0 +1,32 @@
+:root {
+    --primary-color: #BE3144;
+    --secondary-color: #F05941;
+    --faded-secondary-color: #F059412F;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--faded-secondary-color);  
+}
+
+.appbar {
+    margin: 0;
+    padding:0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-row {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
